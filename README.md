@@ -1,4 +1,4 @@
-# AR for Norsk Folkemuseum
+# Augmented Reality for Norsk Folkemuseum
 
 A pro bono Augmented Reality (AR) project developed for [Norsk Folkemuseum](https://norskfolkemuseum.no/) as part of the Hubs work at [Making Waves](https://www.makingwaves.com/).
 
