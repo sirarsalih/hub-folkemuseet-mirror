@@ -1,3 +1,5 @@
+[![Build Status](https://sirarsalih.visualstudio.com/_apis/public/build/definitions/126458c6-b300-4f33-b78d-4c7b968a910f/4/badge)](https://sirarsalih.visualstudio.com/MyFirstProject/_build/index?definitionId=4)
+
 # Augmented Reality for Norsk Folkemuseum
 
 A pro bono Augmented Reality (AR) project developed for [Norsk Folkemuseum](https://norskfolkemuseum.no/) as part of the Hubs work at [Making Waves](https://www.makingwaves.com/).
