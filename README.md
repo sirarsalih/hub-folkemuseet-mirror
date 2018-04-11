@@ -22,3 +22,7 @@ npm install -g bower
 ```
 
 5. Clean, build and run solution.
+
+## Continuous delivery
+
+Visual Studio Team Services (VSTS) is used from the Azure Portal (click on the app service -> Continuous Delivery) for building and deploying the site. When code is pushed to the master branch, a build is automaticaly started. If the build succeeds, a deploy to the Staging environment is automatically started. If the deploy succeeds, we can then manually promote the deploy to Production.
