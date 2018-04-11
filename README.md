@@ -29,7 +29,11 @@ npm install -g bower
 
 Process flow:
 
-1. Code push to master branch.
+1. Push code to master branch.
 2. Build starts.
 3. If build succeeds, a deployment to Production is started. If build fails, process is stopped.
 4. Deployment to Production succeeds/fails.
+
+## SSL/HTTPS
+
+The site will support HTTPS once we move it to the https://norskfolkemuseum.no/ domain.
