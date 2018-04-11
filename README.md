@@ -4,7 +4,7 @@ A pro bono Augmented Reality (AR) project developed for [Norsk Folkemuseum](http
 
 ## Weather PWA Sample Template
 
-[Jonathan Danylko's Weather PWA sample](https://dzone.com/articles/building-progressive-web-applications-pwa-with-vis) is used as a template, we are thankful for his free contribution.
+Jonathan Danylko's [Weather PWA sample](https://dzone.com/articles/building-progressive-web-applications-pwa-with-vis) is used as a template, we are thankful for his free contribution.
 
 ## Tech
 
