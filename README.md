@@ -15,7 +15,7 @@ ASP.NET Core MVC is used for the back-end and simple JavaScript is used for the 
 1. Clone repo.
 2. Download and install the [.NET Core 1.0.4 executable](https://github.com/dotnet/core/blob/master/release-notes/download-archives/1.0.4-download.md).
 3. Download and install [Node.js](https://nodejs.org/en/download/).
-4. Install bower globally by exeucting the following command in cmd:
+4. Install bower globally by executing the following command in cmd:
 
 ```
 npm install -g bower
