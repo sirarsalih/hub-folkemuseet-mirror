@@ -111,6 +111,11 @@ body {
     background: #C40C1D;
 }
 
+.google-maps {
+    overflow: hidden;
+    height: 100%;
+}
+
 .header__title {
   font-weight: 400;
   font-size: 20px;
