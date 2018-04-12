@@ -34,16 +34,6 @@
    *
    ****************************************************************************/
 
-  document.getElementById('butRefresh').addEventListener('click', function() {
-    // Refresh all of the forecasts
-    app.updateForecasts();
-  });
-
-  document.getElementById('butAdd').addEventListener('click', function() {
-    // Open/show the add new city dialog
-    app.toggleAddDialog(true);
-  });
-
   document.getElementById('butAddCity').addEventListener('click', function() {
     // Add the newly selected city
     var select = document.getElementById('selectCityToAdd');
