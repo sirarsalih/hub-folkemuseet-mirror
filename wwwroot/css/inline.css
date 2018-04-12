@@ -120,6 +120,16 @@ body {
       -ms-flex: 1;
           flex: 1; }
 
+.footer {
+    background-color: #F0EFEB;
+}
+
+.footer > div {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 25px;
+}
+
 @-webkit-keyframes rotate {
   from {
     -webkit-transform: rotate(0);
