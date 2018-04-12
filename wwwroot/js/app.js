@@ -23,7 +23,6 @@
     spinner: document.querySelector('.loader'),
     cardTemplate: document.querySelector('.cardTemplate'),
     container: document.querySelector('.main'),
-    addDialog: document.querySelector('.dialog-container'),
     daysOfWeek: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
   };
 
@@ -45,15 +44,6 @@
    * Methods to update/refresh the UI
    *
    ****************************************************************************/
-
-  // Toggles the visibility of the add new city dialog.
-  app.toggleAddDialog = function(visible) {
-    if (visible) {
-      app.addDialog.classList.add('dialog-container--visible');
-    } else {
-      app.addDialog.classList.remove('dialog-container--visible');
-    }
-  };
 
   // Updates a weather card with the latest weather forecast. If the card
   // doesn't already exist, it's cloned from the template.
