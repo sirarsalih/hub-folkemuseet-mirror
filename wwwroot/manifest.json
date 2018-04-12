@@ -1,10 +1,20 @@
 {
-  "name": "Kart Norsk Folkemuseum",
-  "short_name": "Kart Norsk Folkemuseum",
+  "name": "Kart - Norsk Folkemuseum",
+  "short_name": "Kart - Norsk Folkemuseum",
   "icons": [
     {
-      "src": "images/icons/icon-128x128.png",
-      "sizes": "128x128",
+      "src": "images/icons/icon-144x82.png",
+      "sizes": "144x82",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icons/icon-152x87.png",
+      "sizes": "152x87",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icons/icon-192x110.png",
+      "sizes": "192x110",
       "type": "image/png"
     }
   ],
