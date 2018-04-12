@@ -236,10 +236,6 @@ body {
     width: 100%;
     font-size: 2em; }
 
-.dialog-buttons {
-  padding: 8px !important;
-  float: right; }
-
 .card {
   padding: 16px;
   position: relative;
