@@ -134,6 +134,21 @@ body {
     float: right;
 }
 
+.footer-social {
+    margin-top: 20px !important;
+}
+
+.footer-social-item {
+    text-decoration: none;
+    color: #000000;
+    font-size: 9pt;
+    margin-right: 10px;
+}
+
+.footer-social-item-img {
+    vertical-align: middle;
+}
+
 @-webkit-keyframes rotate {
   from {
     -webkit-transform: rotate(0);

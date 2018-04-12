@@ -43,13 +43,30 @@
         <h1 class="header__title">NORSK FOLKEMUSEUM</h1>
     </header>
     @RenderBody()
-<footer class="footer">
-    <div class="footer-svg">@Html.Partial("~/Views/Shared/_LogoSvg.cshtml")</div>
-    <div>NORSK FOLKEMUSEUM</div>
-    <div>Museumsveien 10, Bygdøy, 0287 Oslo</div>
-    <div>TELEFON (+47) 22 12 37 00</div>
-    <div>E-POST post@norskfolkemuseum.no</div>
-</footer>
+    <footer class="footer">
+        <div class="footer-svg">@Html.Partial("~/Views/Shared/_LogoSvg.cshtml")</div>
+        <div>NORSK FOLKEMUSEUM</div>
+        <div>Museumsveien 10, Bygdøy, 0287 Oslo</div>
+        <div>TELEFON (+47) 22 12 37 00</div>
+        <div>E-POST post@norskfolkemuseum.no</div>
+        <div class="footer-social">
+            <a href="https://nb-no.facebook.com/NorskFolkemuseum" target="_blank" class="footer-social-item">
+                <img class="footer-social-item-img" src="@Url.Content("images/icons/facebook.PNG")"> Facebook
+            </a>
+            <a href="https://twitter.com/folkemuseet" target="_blank" class="footer-social-item">
+                <img class="footer-social-item-img" src="@Url.Content("images/icons/twitter.PNG")"> Twitter
+            </a>
+            <a href="https://instagram.com/norskfolkemuseum/" target="_blank" class="footer-social-item">
+                <img class="footer-social-item-img" src="@Url.Content("images/icons/instagram.PNG")"> Instagram
+            </a>
+            <a href="https://www.youtube.com/user/Folkemuseum" target="_blank" class="footer-social-item">
+                <img class="footer-social-item-img" src="@Url.Content("images/icons/youtube.PNG")"> Youtube
+            </a>
+            <a href="https://no.tripadvisor.com/Attraction_Review-g190479-d246066-Reviews-The_Norwegian_Museum_of_Cultural_History-Oslo_Eastern_Norway.html" target="_blank" class="footer-social-item">
+                <img class="footer-social-item-img" src="@Url.Content("images/icons/tripadvisor.PNG")"> Tripadvisor
+            </a>
+        </div>
+    </footer>
     <environment names="Development">
         <script src="~/js/app.js" async asp-append-version="true"></script>
     </environment>
