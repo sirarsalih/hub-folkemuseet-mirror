@@ -130,6 +130,10 @@ body {
     margin-left: 25px;
 }
 
+.footer-svg {
+    float: right;
+}
+
 @-webkit-keyframes rotate {
   from {
     -webkit-transform: rotate(0);
