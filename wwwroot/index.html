@@ -5,9 +5,9 @@ the Home screen of phone devices, as these shortcuts add an index.html to the UR
 <script type="text/javascript">
     window.onload = function () {
         var url = window.location.href;
-        if (url.indexOf("https") === -1 && location.hostname !== "localhost" && location.hostname !== "127.0.0.1") {
-            url = url.replace("http", "https");
-        }
+        //if (url.indexOf("https") === -1 && location.hostname !== "localhost" && location.hostname !== "127.0.0.1") {
+        //    url = url.replace("http", "https");
+        //}
         if (url.indexOf("index.html") >= 0) {
             url = url.replace("index.html", "");
             redirectPage(url);
