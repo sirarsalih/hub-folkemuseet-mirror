@@ -41,3 +41,12 @@ The site supports and enforces HTTPS both locally and globally. We use a self-si
 Local app URL: https://localhost:44330
 <br/>
 Global app URL: https://norskfolkemuseum.azurewebsites.net
+
+### How to enable and enforce HTTPS locally
+
+1. Right click the project.
+2. Click on Properties.
+3. Click on Debug.
+4. Tick the Enable SSL checkbox.
+5. Add https://localhost:44330 to the App URL field.
+6. Save project.
