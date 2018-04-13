@@ -36,4 +36,4 @@ Process flow:
 
 ## SSL/HTTPS
 
-The site will support HTTPS once we move it to the https://norskfolkemuseum.no/ domain.
+The site supports and enforces HTTPS both locally and globally. We use a self-signed certificate when debugging locally.
