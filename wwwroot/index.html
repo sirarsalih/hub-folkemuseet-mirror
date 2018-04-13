@@ -1,0 +1,19 @@
+﻿<!--This file serves index.html in the URL-->
+
+<script type="text/javascript">
+    window.onload = function () {
+        var url = window.location.href;
+        var urlTrimmed = "";
+        if (url.indexOf("index.html") >= 0) {
+            urlTrimmed = url.replace("index.html", "");
+            redirectPage(urlTrimmed);
+        } else {
+            redirectPage(url);
+        }
+    };
+
+    function redirectPage(baseUrl) {
+        var url = baseUrl + "Home/Index";
+        window.location.href = url;
+    };
+</script>
