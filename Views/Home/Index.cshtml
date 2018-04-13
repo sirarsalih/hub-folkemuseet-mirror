@@ -3,6 +3,8 @@
 </main>
 
 <script>
+    var map;
+    var infoWindow;
     function initMap() {
         var norskfolkemuseum = { lat: 59.907216, lng: 10.685997 };
         var mapOptions = {
@@ -10,11 +12,41 @@
             center: norskfolkemuseum,
             mapTypeId: 'satellite'
         };
-        var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+        map = new google.maps.Map(document.getElementById('map'), mapOptions);
         var marker = new google.maps.Marker({
             position: norskfolkemuseum,
             map: map
         });
+        infoWindow = new google.maps.InfoWindow;
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                var currentPosition = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
+                
+                //The below code sets the map position equal to current user position
+                //infoWindow.setPosition(currentPosition);
+                //infoWindow.setContent('Location found.');
+                //infoWindow.open(map);
+                //map.setCenter(currentPosition);
+            }, function() {
+                handleLocationError(true, infoWindow, map.getCenter());
+            });
+        } else {
+            // Browser doesn't support Geolocation
+            handleLocationError(false, infoWindow, map.getCenter());
+        }
     }
+
+    function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+            'Error: The Geolocation service failed.' :
+            'Error: Your browser doesn\'t support geolocation.');
+        infoWindow.open(map);
+    }
+    
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAL0vmWCIztR6B0zTPhFcHjEFoU2CqtVrw&callback=initMap" async defer></script>
