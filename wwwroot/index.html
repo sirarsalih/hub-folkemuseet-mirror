@@ -1,12 +1,13 @@
-﻿<!--This file serves index.html in the URL-->
+﻿<!--This file serves index.html in the URL by redirecting to the Index action, 
+this is especially needed for site shortcuts in the Home screen of phone devices,
+as these shortcuts add an index.html to the URL-->
 
 <script type="text/javascript">
     window.onload = function () {
         var url = window.location.href;
-        var urlTrimmed = "";
         if (url.indexOf("index.html") >= 0) {
-            urlTrimmed = url.replace("index.html", "");
-            redirectPage(urlTrimmed);
+            url = url.replace("index.html", "");
+            redirectPage(url);
         } else {
             redirectPage(url);
         }
