@@ -37,3 +37,6 @@ Process flow:
 ## SSL/HTTPS
 
 The site supports and enforces HTTPS both locally and globally. We use a self-signed certificate when debugging locally.
+
+Local app URL: https://localhost:44330
+Global app URL: https://norskfolkemuseum.azurewebsites.net
