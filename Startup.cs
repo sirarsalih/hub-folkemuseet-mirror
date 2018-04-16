@@ -44,8 +44,7 @@ namespace NorskFolkemuseum
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 
-            var options = new RewriteOptions()
-                .AddRedirectToHttps();
+            var options = new RewriteOptions().AddRedirectToHttps();
 
             app.UseRewriter(options);
 
