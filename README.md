@@ -42,7 +42,7 @@ Local app URL: https://localhost:44330
 <br/>
 Global app URL: https://norskfolkemuseum.azurewebsites.net
 
-### How to enable and enforce HTTPS
+### Enabling and enforcing HTTPS
 
 In order to achieve this, we need to redirect all URLs to HTTPS and require that all URLs use HTTPS. In `Startup.cs`, add the following to the `ConfigureServices` method:
 
