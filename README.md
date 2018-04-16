@@ -44,9 +44,7 @@ Global app URL: https://norskfolkemuseum.azurewebsites.net
 
 ### How to enable and enforce HTTPS
 
-In order to achieve this, we need to redirect all URLs to HTTPS and require that all URLs use HTTPS.
-<br/>
-In `Startup.cs`, add the following to the `ConfigureServices` method:
+In order to achieve this, we need to redirect all URLs to HTTPS and require that all URLs use HTTPS. In `Startup.cs`, add the following to the `ConfigureServices` method:
 
 ```
 services.Configure<MvcOptions>(options =>
@@ -62,7 +60,7 @@ var options = new RewriteOptions().AddRedirectToHttps();
 app.UseRewriter(options);
 ```
 
-### How to enable HTTPS while debugging locally
+The following steps enable and enforce HTTPS while debugging locally (a self-signed certificate will be created):
 
 1. Right click the project.
 2. Click on Properties.
