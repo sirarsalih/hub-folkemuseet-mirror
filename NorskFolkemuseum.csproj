@@ -46,4 +46,9 @@
     <PackageReference Update="Microsoft.NETCore.App" Version="1.0.4" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\data\" />
+    <Folder Include="wwwroot\audio\" />
+  </ItemGroup>
+
 </Project>

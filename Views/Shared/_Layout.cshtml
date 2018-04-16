@@ -20,7 +20,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kart - Norsk Folkemuseum</title>
-    
+
     <environment names="Development">
         <link rel="stylesheet" type="text/css" href="~/css/inline.css">
     </environment>
@@ -28,6 +28,12 @@
         <link rel="stylesheet" href="~/css/inline.min.css" asp-append-version="true" />
     </environment>
     
+    <!-- Load JQuery -->
+    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    
+    <!-- Load the Sounds of Street View code -->
+    <script src="~/js/sosv.min.js"></script>
+
     <link rel="manifest" href="/manifest.json">
     <!-- Add to home screen for Safari on iOS -->
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -58,19 +64,19 @@
         </div>
         <div class="footer-social">
             <a href="https://nb-no.facebook.com/NorskFolkemuseum" target="_blank" class="footer-social-item">
-                <img class="footer-social-item-img" src="@Url.Content("~/images/icons/facebook.PNG")"> Facebook
+                <img class="footer-social-item-img" src="~/images/icons/facebook.PNG"> Facebook
             </a>
             <a href="https://twitter.com/folkemuseet" target="_blank" class="footer-social-item">
-                <img class="footer-social-item-img" src="@Url.Content("~/images/icons/twitter.PNG")"> Twitter
+                <img class="footer-social-item-img" src="~/images/icons/twitter.PNG"> Twitter
             </a>
             <a href="https://instagram.com/norskfolkemuseum/" target="_blank" class="footer-social-item">
-                <img class="footer-social-item-img" src="@Url.Content("~/images/icons/instagram.PNG")"> Instagram
+                <img class="footer-social-item-img" src="~/images/icons/instagram.PNG"> Instagram
             </a>
             <a href="https://www.youtube.com/user/Folkemuseum" target="_blank" class="footer-social-item">
-                <img class="footer-social-item-img" src="@Url.Content("~/images/icons/youtube.PNG")"> Youtube
+                <img class="footer-social-item-img" src="~/images/icons/youtube.PNG"> Youtube
             </a>
             <a href="https://no.tripadvisor.com/Attraction_Review-g190479-d246066-Reviews-The_Norwegian_Museum_of_Cultural_History-Oslo_Eastern_Norway.html" target="_blank" class="footer-social-item">
-                <img class="footer-social-item-img" src="@Url.Content("~/images/icons/tripadvisor.PNG")"> Tripadvisor
+                <img class="footer-social-item-img" src="~/images/icons/tripadvisor.PNG"> Tripadvisor
             </a>
         </div>
     </footer>

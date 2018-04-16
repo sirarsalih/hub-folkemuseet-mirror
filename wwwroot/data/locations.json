@@ -1,0 +1,21 @@
+{
+  "id": "map",
+
+  "lat": "",
+  "lng": "",
+  "heading": "60",
+  "pitch": "1",
+
+  "sounds": [
+    {
+      "name": "accordion",
+      "lat": "43.950648973687",
+      "lng": "4.806433016568121",
+      "src": [
+        "../audio/test.mp3"
+      ],
+      "db": "80",
+      "pause": "0"
+    }
+  ]
+}

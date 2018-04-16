@@ -3,57 +3,45 @@
 </main>
 
 <script>
-    var map;
-    var infoWindow;
-    var timer;
-    function initMap() {
-        //var norskfolkemuseum = { lat: 59.907216, lng: 10.685997 };
-        var mapOptions = {
-            zoom: 18,
-            //center: norskfolkemuseum,
-            mapTypeId: 'satellite'
-        };
-        map = new google.maps.Map(document.getElementById('map'), mapOptions);
-        infoWindow = new google.maps.InfoWindow;
-
+    function init() {
+        //Load location sounds
+        new SOSV("../data/locations.json");
         if (navigator.geolocation) {
-            timer = setInterval(function() {
+            var timer = setInterval(function () {
                 navigator.geolocation.getCurrentPosition(function (position) {
                     var currentPosition = {
                         lat: position.coords.latitude,
                         lng: position.coords.longitude
                     };
-                
-                    //The below code sets the map position equal to current user position
-                    infoWindow.setPosition(currentPosition);
-                    infoWindow.setContent('Du er ca. her.');
-                    infoWindow.open(map);
-                    map.setCenter(currentPosition);
-
-                    //Marker
-                    //var marker = new google.maps.Marker({
-                    //    position: currentPosition,
-                    //    map: map
-                    //});
-                }, function() {
-                    handleLocationError(true, infoWindow, map.getCenter(), true);
+                    //Draw Street View with current user position
+                    initPano(currentPosition.lat, currentPosition.lng);
+                }, function () {
+                    //Couldn't get the position, fallback to Norsk Folkemuseum entrance and exit
+                    initPano(59.907216, 10.685997);
+                    clearInterval(timer);
                 });
-            }, 1000);
+            }, 5000);
         } else {
-            // Browser doesn't support Geolocation
-            handleLocationError(false, infoWindow, map.getCenter(), false);
+            //Browser doesn't support Geolocation, fallback to Norsk Folkemuseum entrance
+            initPano(59.907216, 10.685997);
         }
     }
-
-    function handleLocationError(browserHasGeolocation, infoWindow, pos, interval) {
-        infoWindow.setPosition(pos);
-        infoWindow.setContent(browserHasGeolocation ?
-            'Error: Geolokasjon tjenesten feilet.' :
-            'Error: Din nettleser støtter ikke geolokasjon.');
-        infoWindow.open(map);
-        //Break out of timer interval
-        if (interval) clearInterval(timer);
-    }
     
+    function initPano(lat, lng) {
+        //Note: constructed panorama objects have visible: true
+        //set by default.
+        var panorama = new google.maps.StreetViewPanorama(
+            document.getElementById('map'), {
+                position: {lat: lat, lng: lng},
+                addressControlOptions: {
+                    position: google.maps.ControlPosition.BOTTOM_CENTER
+                },
+                linksControl: false,
+                panControl: false,
+                enableCloseButton: false
+            });
+    }
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAL0vmWCIztR6B0zTPhFcHjEFoU2CqtVrw&callback=initMap" async defer></script>
+
+<!-- Load Google Maps API -->
+<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyAL0vmWCIztR6B0zTPhFcHjEFoU2CqtVrw&callback=init" async defer></script>
