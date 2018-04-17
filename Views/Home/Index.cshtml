@@ -4,12 +4,12 @@
 </main>
 
 <script>
-    var timer;
+    var locationTimer;
+    var soundTimer;
+    var exitInterval = false;
     function initMap() {
-        //var norskfolkemuseum = { lat: 59.907216, lng: 10.685997 };
         var map = new google.maps.Map(document.getElementById('map'), {
             zoom: 18,
-            //center: norskfolkemuseum,
             mapTypeId: google.maps.MapTypeId.ROADMAP
         });
 
@@ -17,7 +17,7 @@
         var infoWindow = new google.maps.InfoWindow;
 
         if (navigator.geolocation) {
-            timer = setInterval(function () {
+            locationTimer = setInterval(function () {
                 navigator.geolocation.getCurrentPosition(function (position) {
                     var newPoint = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
                     if (marker) {
@@ -35,13 +35,17 @@
 
                     //Update location sounds JSON
                     updateJSON(position.coords.latitude, position.coords.longitude);
-
-                    //Load location sounds JSON
-                    new SOSV("../data/locations.json");
                 }, function () {
                     handleLocationError(true, infoWindow, map.getCenter(), true);
                 });
+            }, 3000);
+
+            soundTimer = setInterval(function () {
+                //Load location sounds JSON
+                new SOSV("../data/locations.json");
+                if (exitInterval) clearInterval(soundTimer);
             }, 60000);
+
         } else {
             // Browser doesn't support Geolocation
             handleLocationError(false, infoWindow, map.getCenter(), false);
@@ -64,7 +68,10 @@
             'Error: Geolokasjon tjenesten feilet.' :
             'Error: Din nettleser støtter ikke geolokasjon.');
         infoWindow.open(map);
-        if (interval) clearInterval(timer);
+        if (interval) {
+            clearInterval(locationTimer);
+            exitInterval = true;
+        }
     }
 
 </script>

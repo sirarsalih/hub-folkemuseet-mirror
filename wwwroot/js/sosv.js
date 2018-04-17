@@ -85,15 +85,9 @@ var Sound = function(json, panorama, _sosv){
 		this.updatePan();
 	};
 
-	this.playSound = function(){
-
-		obj.sound.play();
-
-	    obj.sound.on('end', function () {
-
-	        alert("Finished playing!");
-
-	    });
+	this.playSound = function() {
+        
+        obj.sound.play();
 
 		// Manually loop the sound, interspesed with pauses, if we have a pause value for this object
 		if (parseFloat(obj.data.pause)) {
