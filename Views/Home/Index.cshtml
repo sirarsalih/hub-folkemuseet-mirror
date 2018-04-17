@@ -1,8 +1,10 @@
 ﻿<main class="main">
+    <div id="dummy-map" class="dummy-map"></div>
     <div id="map" class="map"></div>
 </main>
 
 <script>
+    var timer;
     function initMap() {
         //var norskfolkemuseum = { lat: 59.907216, lng: 10.685997 };
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -15,7 +17,7 @@
         var infoWindow = new google.maps.InfoWindow;
 
         if (navigator.geolocation) {
-            setInterval(function () {
+            timer = setInterval(function () {
                 navigator.geolocation.getCurrentPosition(function (position) {
                     var newPoint = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
                     if (marker) {
@@ -37,12 +39,12 @@
                     //Load location sounds JSON
                     new SOSV("../data/locations.json");
                 }, function () {
-                    handleLocationError(true, infoWindow, map.getCenter());
+                    handleLocationError(true, infoWindow, map.getCenter(), true);
                 });
             }, 10000);
         } else {
             // Browser doesn't support Geolocation
-            handleLocationError(false, infoWindow, map.getCenter());
+            handleLocationError(false, infoWindow, map.getCenter(), false);
         }
     }
 
@@ -56,12 +58,13 @@
         });
     }
 
-    function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+    function handleLocationError(browserHasGeolocation, infoWindow, pos, interval) {
         infoWindow.setPosition(pos);
         infoWindow.setContent(browserHasGeolocation ?
             'Error: Geolokasjon tjenesten feilet.' :
             'Error: Din nettleser støtter ikke geolokasjon.');
         infoWindow.open(map);
+        if (interval) clearInterval(timer);
     }
 
 </script>

@@ -116,6 +116,10 @@ body {
     height: 100%;
 }
 
+.dummy-map {
+    display: none;
+}
+
 .header__title {
   font-weight: 400;
   font-size: 20px;
