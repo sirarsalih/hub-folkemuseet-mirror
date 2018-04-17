@@ -1,9 +1,6 @@
-﻿// Configure bundling and minification for the project.
-// More info at https://go.microsoft.com/fwlink/?LinkId=808241
 [
   {
     "outputFileName": "wwwroot/css/inline.min.css",
-    // An array of relative input file paths. Globbing patterns supported
     "inputFiles": [
       "wwwroot/css/inline.css"
     ]
@@ -13,12 +10,21 @@
     "inputFiles": [
       "wwwroot/js/app.js"
     ],
-    // Optionally specify minification options
     "minify": {
       "enabled": true,
       "renameLocals": true
-    },
-    // Optinally generate .map file
-    "sourceMap": false
+    }
+  },
+  {
+    "outputFileName": "wwwroot/js/sosv.min.js",
+    "inputFiles": [
+      "wwwroot/js/sosv.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/howler.min.js",
+    "inputFiles": [
+      "wwwroot/js/howler.js"
+    ]
   }
 ]

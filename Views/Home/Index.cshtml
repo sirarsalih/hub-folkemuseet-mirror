@@ -41,7 +41,7 @@
                 }, function () {
                     handleLocationError(true, infoWindow, map.getCenter(), true);
                 });
-            }, 10000);
+            }, 60000);
         } else {
             // Browser doesn't support Geolocation
             handleLocationError(false, infoWindow, map.getCenter(), false);

@@ -1,14 +1,14 @@
 {
   "id": "dummy-map",
-  "lat": "59.919850399999994",
-  "lng": "10.7350783",
+  "lat": "59.919443099999995",
+  "lng": "10.7310114",
   "heading": "60",
   "pitch": "1",
   "sounds": [
     {
-      "name": "test1",
-      "lat": "43.950648973687",
-      "lng": "4.806433016568121",
+      "name": "norskfolkemuseum",
+      "lat": "59.907216",
+      "lng": "10.685997",
       "src": [
         "../audio/test.mp3"
       ],
@@ -16,7 +16,7 @@
       "pause": "0"
     },
     {
-      "name": "test2",
+      "name": "makingwaves1",
       "lat": "59.919071499999994",
       "lng": "10.735106199999999",
       "src": [
@@ -26,9 +26,29 @@
       "pause": "0"
     },
     {
-      "name": "test3",
+      "name": "makingwaves2",
       "lat": "59.919850399999994",
       "lng": "10.7350783",
+      "src": [
+        "../audio/test.mp3"
+      ],
+      "db": "80",
+      "pause": "0"
+    },
+    {
+      "name": "makingwaves3",
+      "lat": "59.9194755",
+      "lng": "10.7310296",
+      "src": [
+        "../audio/test.mp3"
+      ],
+      "db": "80",
+      "pause": "0"
+    },
+    {
+      "name": "makingwaves4",
+      "lat": "59.91943969999999",
+      "lng": "10.7310875",
       "src": [
         "../audio/test.mp3"
       ],
