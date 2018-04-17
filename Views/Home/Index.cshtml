@@ -43,6 +43,7 @@
             soundTimer = setInterval(function () {
                 //Load location sounds JSON
                 new SOSV("../data/locations.json");
+                console.log("Playing sound.");
                 if (exitInterval) clearInterval(soundTimer);
             }, 60000);
 
