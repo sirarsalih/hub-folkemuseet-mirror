@@ -17,8 +17,7 @@
         if (navigator.geolocation) {
             setInterval(function () {
                 navigator.geolocation.getCurrentPosition(function (position) {
-                    var newPoint = new google.maps.LatLng(position.coords.latitude, 
-                        position.coords.longitude);
+                    var newPoint = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
                     if (marker) {
                         //Marker already created - Move it
                         marker.setPosition(newPoint);
@@ -31,16 +30,30 @@
                     }
                     //Center the map on the new position
                     map.setCenter(newPoint);
-                    //Load location sounds - work in progress
-                    //new SOSV("../data/locations.json");
+
+                    //Update location sounds JSON
+                    updateJSON(position.coords.latitude, position.coords.longitude);
+
+                    //Load location sounds JSON
+                    new SOSV("../data/locations.json");
                 }, function () {
                     handleLocationError(true, infoWindow, map.getCenter());
                 });
-            }, 2000);
+            }, 10000);
         } else {
             // Browser doesn't support Geolocation
             handleLocationError(false, infoWindow, map.getCenter());
         }
+    }
+
+    function updateJSON(lat, lng)
+    {
+        $.ajax({
+            url: '@Url.Action("UpdateJSON","Home")',
+            data: { lat: lat, lng: lng }
+        }).done(function() {
+            console.log("JSON file updated with new position.");
+        });
     }
 
     function handleLocationError(browserHasGeolocation, infoWindow, pos) {
