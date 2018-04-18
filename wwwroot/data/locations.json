@@ -54,6 +54,16 @@
       ],
       "db": "80",
       "pause": "0"
+    },
+    {
+      "name": "makingwaves5",
+      "lat": "59.919213",
+      "lng": "10.731138",
+      "src": [
+        "../audio/test.mp3"
+      ],
+      "db": "80",
+      "pause": "0"
     }
   ]
 }
