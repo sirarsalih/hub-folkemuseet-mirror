@@ -129,6 +129,10 @@ body {
       -ms-flex: 1;
           flex: 1; }
 
+.countDown {
+    color: #C40C1D;
+}
+
 .footer {
     background-color: #F0EFEB;
 }
