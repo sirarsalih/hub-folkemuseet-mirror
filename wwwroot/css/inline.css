@@ -129,12 +129,12 @@ body {
       -ms-flex: 1;
           flex: 1; }
 
-.count-down {
+.count-down-message {
     color: #C40C1D;
     display: none;
 }
 
-.sound-message {
+.no-sound-message {
     color: #C40C1D;
     display: none;
 }
