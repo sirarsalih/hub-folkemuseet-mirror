@@ -131,6 +131,12 @@ body {
 
 .count-down {
     color: #C40C1D;
+    display: none;
+}
+
+.sound-message {
+    color: #C40C1D;
+    display: none;
 }
 
 .sound-button {

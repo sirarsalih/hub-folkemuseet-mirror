@@ -67,7 +67,14 @@
         $.ajax({
             url: '@Url.Action("UpdateJSON","Home")',
             data: { lat: lat, lng: lng }
-        }).done(function() {
+        }).done(function (data) {
+            if (data === true) {
+                $(".count-down").css('display', 'inline-block');
+                $(".sound-message").hide();
+            } else {
+                $(".count-down").hide();
+                $(".sound-message").css('display', 'inline-block');
+            }
             console.log("JSON file updated with new position.");
         });
     }
