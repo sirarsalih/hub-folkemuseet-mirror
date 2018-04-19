@@ -129,8 +129,22 @@ body {
       -ms-flex: 1;
           flex: 1; }
 
-.countDown {
+.count-down {
     color: #C40C1D;
+}
+
+.sound-button {
+    background-color: #3D334B;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    display: none;
 }
 
 .footer {

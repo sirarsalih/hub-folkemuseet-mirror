@@ -40,18 +40,19 @@
             }, 5000);
             var countDown = 60;
             var countDownTimer = setInterval(function () {
-                $("#countDown").html(countDown + " sekunder...");
+                $("#count-down").html(countDown + " sekunder...");
                 countDown--;
                 if (countDown === 0) countDown = 60;
                 if (exitInterval) {
                     clearInterval(countDownTimer);
-                    $("#countDown").html("Det skjedde en feil, avslutter nedtelling.");
+                    $("#count-down").html("Det skjedde en feil, avslutter nedtelling.");
                 }
             }, 1000);
             var soundTimer = setInterval(function () {
                 //Load location sounds JSON
                 new SOSV("../data/locations.json");
                 console.log("Playing sound.");
+                $(".sound-button").css('display', 'inline-block');
                 if (exitInterval) clearInterval(soundTimer);
             }, countDown * 1000);
 
@@ -81,6 +82,10 @@
             clearInterval(locationTimer);
             exitInterval = true;
         }
+    }
+
+    function stopSound() {
+        Sound.stopSound();
     }
 
 </script>
