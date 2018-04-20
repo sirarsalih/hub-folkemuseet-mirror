@@ -57,7 +57,8 @@
             <div><strong>Vi ønsker deg en flott tur!</strong></div>
             <div class="count-down-message"><strong>Lydspor spilles om: <span id="count-down">Laster...</span></strong></div>
             <div class="no-sound-message"><strong>Fant ingen lydspor i denne lokasjonen.</strong></div>
-            <button class="sound-button" onclick="muteSound()">Mute</button>
+            <button id="mute-sound-button" class="sound-button" onclick="muteSound()">Mute</button>
+            <button id="unmute-sound-button" class="sound-button" onclick="unmuteSound()">Unmute</button>
         </div>
         <div>
             <div class="footer-svg">@Html.Partial("~/Views/Shared/_LogoSvg.cshtml")</div>

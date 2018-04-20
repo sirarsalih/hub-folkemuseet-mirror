@@ -52,7 +52,7 @@
                 //Load location sounds JSON
                 new SOSV("../data/locations.json");
                 console.log("Playing sound.");
-                $(".sound-button").css('display', 'inline-block');
+                $("#mute-sound-button").css('display', 'inline-block');
                 if (exitInterval) clearInterval(soundTimer);
             }, countDown * 1000);
 
@@ -93,8 +93,15 @@
 
     function muteSound() {
         Howler.mute();
+        $("#mute-sound-button").hide();
+        $("#unmute-sound-button").css('display', 'inline-block');
     }
 
+    function unmuteSound() {
+        Howler.unmute();
+        $("#unmute-sound-button").hide();
+        $("#mute-sound-button").css('display', 'inline-block');
+    }
 </script>
 <!-- Load Google Maps API -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAL0vmWCIztR6B0zTPhFcHjEFoU2CqtVrw&callback=initMap" async defer></script>
