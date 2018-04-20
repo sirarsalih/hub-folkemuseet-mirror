@@ -57,9 +57,7 @@
             <div><strong>Vi ønsker deg en flott tur!</strong></div>
             <div class="count-down-message"><strong>Lydspor spilles om: <span id="count-down">Laster...</span></strong></div>
             <div class="no-sound-message"><strong>Fant ingen lydspor i denne lokasjonen.</strong></div>
-
-            <!---TODO: Work in progress, uncomment the below when the stop sound is actually working--->
-            @*<button id="stop-sound-button" class="sound-button" onclick="stopSound()">Stopp</button>*@
+            <button class="sound-button" onclick="muteSound()">Mute</button>
         </div>
         <div>
             <div class="footer-svg">@Html.Partial("~/Views/Shared/_LogoSvg.cshtml")</div>

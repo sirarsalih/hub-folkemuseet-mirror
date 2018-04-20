@@ -64,6 +64,36 @@
       ],
       "db": "80",
       "pause": "0"
+    },
+    {
+      "name": "makingwaves6",
+      "lat": "59.91946039999999",
+      "lng": "10.7309819",
+      "src": [
+        "../audio/test.mp3"
+      ],
+      "db": "80",
+      "pause": "0"
+    },
+    {
+      "name": "makingwaves7",
+      "lat": "59.9194436",
+      "lng": "10.7309904",
+      "src": [
+        "../audio/test.mp3"
+      ],
+      "db": "80",
+      "pause": "0"
+    },
+    {
+      "name": "makingwaves8",
+      "lat": "59.91947580000001",
+      "lng": "10.7310758",
+      "src": [
+        "../audio/test.mp3"
+      ],
+      "db": "80",
+      "pause": "0"
     }
   ]
 }

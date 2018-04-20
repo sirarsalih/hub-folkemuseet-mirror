@@ -108,8 +108,6 @@ var Sound = function(json, panorama, _sosv){
         obj.sound.stop();
     };
 
-    Sound.stopSound = this.stopSound;
-
 	this.unloadSound = function(fadeSpeed){
 
 		obj.sound.fade(obj.vol, 0, fadeSpeed, function(){
