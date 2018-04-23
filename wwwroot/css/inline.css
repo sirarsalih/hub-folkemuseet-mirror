@@ -134,6 +134,11 @@ body {
     display: none;
 }
 
+.sound-icon {
+    width: 30px;
+    height: 30px;
+}
+
 .no-sound-message {
     color: #C40C1D;
     display: none;
