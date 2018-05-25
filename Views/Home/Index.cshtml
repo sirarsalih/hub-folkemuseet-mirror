@@ -3,7 +3,19 @@
     <div id="map" class="map"></div>
 </main>
 
+
 <script>
+
+    google.maps.Polygon.prototype.getBoundingBox = function() {
+        var bounds = new google.maps.LatLngBounds();
+
+        this.getPath().forEach(function(element,index) {
+            bounds.extend(element)
+        });
+
+        return(bounds);
+    };
+
     var locationTimer;
     var exitInterval = false;
     function initMap() {
@@ -19,14 +31,48 @@
             locationTimer = setInterval(function () {
                 navigator.geolocation.getCurrentPosition(function (position) {
                     var newPoint = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+
+                    // add polygons here
+                    var newPoly = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+
+                    // trianglepoly: slottsparken utenfor MW:
+                    var triangleCoords = [
+                        new google.maps.LatLng(59.91827,10.72886),
+                        new google.maps.LatLng(59.91921,10.73023),
+                        new google.maps.LatLng(59.91886,10.72843)
+                    ];
+
+                    myPolygon = new google.maps.Polygon({
+                        paths: triangleCoords,
+                        draggable: true, // turn off if it gets annoying
+                        editable: true,
+                        strokeColor: '#FF0000',
+                        strokeOpacity: 0.8,
+                        strokeWeight: 2,
+                        fillColor: '#FF0000',
+                        fillOpacity: 0.35
+                    });
+
+                    //new google.maps.Marker({
+                    //    position: polygon.getBoundingBox().getCenter(),
+                    //    map: map
+                    //});
+                    myPolygon.setMap(map);
+
+                    google.maps.event.addListener(myPolygon, 'click', isWithinPoly);
+
+                    //
+
+
                     if (marker) {
                         //Marker already created - Move it
                         marker.setPosition(newPoint);
                     } else {
                         //Marker does not exist - Create it
                         marker = new google.maps.Marker({
-                            position: newPoint,
+                            position: myPolygon,
                             map: map
+                            
                         });
                     }
                     //Center the map on the new position
@@ -62,13 +108,18 @@
         }
     }
 
+    function isWithinPoly(){
+        var isWithinPolygon = google.maps.geometry.poly.containsLocation(newPoint);
+        console.log("You are inside an area of interest.");
+    }
+
     function updateJSON(lat, lng)
     {
         $.ajax({
             url: '@Url.Action("UpdateJSON","Home")',
             data: { lat: lat, lng: lng }
-        }).done(function (locationHasSound) {
-            if (locationHasSound === true) {
+        }).done(function (isWithinPoly) {
+            if (isWithinPoly === true) {
                 $(".count-down-message").css('display', 'inline-block');
                 $(".no-sound-message").hide();
             } else {
@@ -104,4 +155,6 @@
     }
 </script>
 <!-- Load Google Maps API -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAL0vmWCIztR6B0zTPhFcHjEFoU2CqtVrw&callback=initMap" async defer></script>
+@*<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAL0vmWCIztR6B0zTPhFcHjEFoU2CqtVrw&callback=initMap" async defer></script>*@
+
+<script type="text/javascript" src="//maps.googleapis.com/maps/api/js?libraries=geometry&sensor=false&key=AIzaSyAL0vmWCIztR6B0zTPhFcHjEFoU2CqtVrw&callback=initMap" async defer></script>
