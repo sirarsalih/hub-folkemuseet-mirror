@@ -29,7 +29,7 @@
 
         if (navigator.geolocation) {
             locationTimer = setInterval(function () {
-                navigator.geolocation.getCurrentPosition(function (position) {
+                navigator.geolocation.watchPosition(function (position) {
                     var newPoint = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 
                     // add polygons here
